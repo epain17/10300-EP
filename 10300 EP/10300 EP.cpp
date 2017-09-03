@@ -9,36 +9,30 @@
 
 int main()
 {
-	std::fstream inputfile;
-	float testCases = 0, farmers = 0, farmsize = 0, farmanimals = 0, enviropoints= 0;
-	int temp = 0;
-	float result = 0;
 	
-	inputfile.open("input.txt");
+	float testCases = 0, farmers = 0, farmsize = 0, farmanimals = 0, enviropoints= 0;
+	int endResult = 0;
+	float temp = 0;
+	
+	std::cin >> testCases;
 
-	while (!inputfile.eof())
-	{
-		inputfile >> testCases;
 		for (int i = 0; i < testCases; i++)
 		{
-			inputfile >> farmers;
-			temp = 0;
+			std::cin >> farmers;
+			endResult = 0;
 			for (int i = 0; i < farmers; i++)
 			{
-				inputfile >> farmsize >> farmanimals >> enviropoints;
+				std::cin >> farmsize >> farmanimals >> enviropoints;
 			
-				result = farmsize/farmanimals;
+				temp = farmsize/farmanimals;
 				
 				
-				temp += (result*enviropoints) * farmanimals;
+				endResult += (temp*enviropoints) * farmanimals;
 			}
-				std::cout << temp << std::endl;
+				std::cout << endResult << std::endl;
 		}
 
 		
-
-	}
-	inputfile.close();
 
 	std::cin >> enviropoints;
 
